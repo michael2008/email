@@ -230,5 +230,5 @@ func (m *Message) Bytes() []byte {
 
 // Send sends the message.
 func Send(addr string, auth smtp.Auth, m *Message) error {
-	return smtp.SendMail(addr, auth, m.From.Address, m.Tolist(), m.Bytes())
+	return sendMail(addr, auth, m.From.Address, m.Tolist(), m.Bytes())
 }
